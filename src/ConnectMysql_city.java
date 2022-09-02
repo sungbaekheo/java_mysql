@@ -1,11 +1,11 @@
 import java.sql.*;
 
-public class ConnectMysql {
+public class ConnectMysql_city {
    static final String DB_URL = "jdbc:mysql://localhost/world";
    static final String USER = "root";
    static final String PASS = "tbrs00002b";
-   static final String QUERY = "SELECT ID, NAME, AGE, ADDRESS, SALARY " + 
-                                "FROM company";
+   static final String QUERY = "SELECT ID, NAME, CountryCode, District, Population " + 
+                                "FROM city";
 
    public static void main(String[] args) {
       // Open a connection
@@ -16,11 +16,11 @@ public class ConnectMysql {
          // Extract data from result set
          while (rs.next()) {
             // Retrieve by column name
-            System.out.print("ID: " + rs.getString("id"));
+            System.out.print("ID: " + rs.getInt("id"));
             System.out.print(", NAME: " + rs.getString ("name"));
-            System.out.print(", Age: " + rs.getInt("age"));
-            System.out.print(", First: " + rs.getString("address"));
-            System.out.println(", Last: " + rs.getInt("salary"));
+            System.out.print(", CountryCode: " + rs.getString("CountryCode"));
+            System.out.print(", District: " + rs.getString("District"));
+            System.out.println(", Population: " + rs.getInt("Population"));
          }
       } catch (SQLException e) {
          e.printStackTrace();
