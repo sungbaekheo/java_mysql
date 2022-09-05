@@ -7,6 +7,12 @@ public class MiniProjectConnetMysql {
             // Check Schema
             // Check password
 
+        // Make Statments
+        
+        // Get data from database
+            // Input Query on statement
+            // Get result from Query
+
     }
     
 }
